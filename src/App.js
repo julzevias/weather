@@ -7,7 +7,6 @@ const api = {
 function App() {
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
-  const [banner, setBanner] = useState(false);
 
   const search = (evt) => {
     if (evt.key === "Enter") {
@@ -46,15 +45,6 @@ function App() {
     return `${day} ${date} ${month} ${year}`;
   };
 
-  // const neutralBanner = () => {
-  //   if ((weather.main = "undefined")) {
-  //     setBanner(false);
-  //     return "This place doesn't exist";
-  //   } else {
-  //     setBanner(true);
-  //   }
-  // };
-
   return (
     <div
       className={
@@ -69,12 +59,16 @@ function App() {
         <div className="search-box">
           <input
             type="text"
-            className="search-bar"
             placeholder="Search..."
             onChange={(e) => setQuery(e.target.value)}
             value={query}
             onKeyPress={search}
-          />
+            className={
+              typeof weather.main != "undefined"
+                ? "search-bar"
+                : "search-bar error"
+            }
+          ></input>
         </div>
 
         {typeof weather.main != "undefined" ? (
