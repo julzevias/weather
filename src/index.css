@@ -48,7 +48,7 @@ main {
 
   appearance: none;
   background: none;
-
+  border: none;
   outline: none;
 
   background-color: rgba(255, 255, 255, 0.5);
@@ -64,10 +64,6 @@ main {
 
 .search-box .search-bar:focus {
   background-color: rgba(255, 255, 255, 0.75);
-}
-
-.error {
-  border: 3px solid #ca2828;
 }
 
 .location-box .location {
@@ -112,4 +108,7 @@ main {
   font-weight: 700;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
   text-align: center;
+}
+.instruction {
+  border: red;
 }

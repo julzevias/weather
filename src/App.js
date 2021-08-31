@@ -63,14 +63,9 @@ function App() {
             onChange={(e) => setQuery(e.target.value)}
             value={query}
             onKeyPress={search}
-            className={
-              typeof weather.main != "undefined"
-                ? "search-bar"
-                : "search-bar error"
-            }
+            className="search-bar"
           ></input>
         </div>
-
         {typeof weather.main != "undefined" ? (
           <div>
             <div className="location-box">
